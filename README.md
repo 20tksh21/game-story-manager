@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+1.プロジェクト概要
 
-## Getting Started
+名称：ゲームストーリーマネージャー　Game Story Manager
+機能概要：ゲーム開発におけるイベント条件やフラグ依存関係の複雑化を解消し、ストーリー構造の可視化と整合性チェックを行うWebツール。
+目的：自分でゲームを作っている中で、ストーリーのイベントの前後関係の把握やフラグ管理が大変だと感じたため、一元管理できるツールがあったら便利だと思い、開発することにした
+ターゲット：インディーゲーム開発者
 
-First, run the development server:
+2.技術スタック
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+3.実装する機能
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+【必須】
+・基本のCRUD　　イベントを作成、削除する機能
+・フラグ一覧　　フラグ一覧を表示するページを作り、未使用のフラグ、条件となっているが未定義のフラグを別に一覧表示
+・フラグ詳細　　フラグ一覧からクリックしたフラグがどのイベントで手に入り、どのイベントで使うか確認できるページを作成
+・タグ、分類　　各イベントをチャプター（時系列）、エリアなどで分類、絞り込みで表示する機能
+・分岐条件の設定　　特定のフラグを所持or未所持で分岐する条件を設定可能
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+【できれば】
+・進行不可検知　　時系列が逆（3章で入手するフラグが2章のイベントの条件になっているなど）、デッドロックなどで進行不可になる部分を自動で検知して警告を出す
+・GUI　　各イベントをノードとしてフローチャートで表示できるようにする
