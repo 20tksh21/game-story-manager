@@ -34,6 +34,10 @@ export default function MainPage() {
         setDescription("");
     }
 
+    const handleDeleteEvent = (id: number) => {
+        setGameEvent(gameEvents.filter(gEvent => gEvent.id !== id))
+    }
+
     return (
         <main>
             <div>
@@ -53,6 +57,7 @@ export default function MainPage() {
                     <p>必要フラグ：{gEvent.needFlag?.join(", ") || "なし"}</p>
                     <p>獲得フラグ：{gEvent.getFlag || "なし"}</p>
                     {gEvent.description && <p>{gEvent.description}</p>}
+                    <button onClick={() => handleDeleteEvent(gEvent.id)}>削除</button>
                     <hr></hr>
                 </div>
             ))}
